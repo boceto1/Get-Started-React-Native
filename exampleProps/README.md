@@ -11,7 +11,7 @@ Could be the name a person changed? or his id?The answer is no. This properties 
 That is __Props__, These are properties can't change while the app run, in other words. These have a *"Immutable or Unchangeable"* behaivor. 
 
 
-In the example, I created a component called __"Queja"__ with __id,pic,descripcion__  how parameters. This structure was used in four differents ways and with differents parameters.
+In the example, I created a component called __"Person"__ with __id,pic,descripcion__  how parameters. This structure was used in four differents ways and with differents parameters.
 
 Look the code in App.js file.
 
