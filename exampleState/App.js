@@ -1,47 +1,51 @@
 import React, { Component }  from 'react';
 import { StyleSheet, Text, View,Image,Button } from 'react-native';
 
-class Queja extends Component {
 
+/**
+ * Componet Queja
+ */
+class Person extends Component {
+
+  /**
+   * All states are declared inside the constructor in the propierty state.
+   * like: this.state = {state1:value,state2:value}
+   */
   constructor(props) {
- 
-    let pic1 = {
-      uri: 'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/30629511_2085452011706470_7758051455998623744_n.png?_nc_cat=107&_nc_ht=scontent.fuio1-1.fna&oh=2195a14152eb11b1a72c52bf67499bdf&oe=5C7C84CD'
-    };
-
-    let pic2 = {
-      uri: 'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/14691145_1772646259653715_6259652813948861236_n.jpg?_nc_cat=107&_nc_ht=scontent.fuio1-1.fna&oh=e6f61fac410fbdae7a99c4d0a4443711&oe=5C763871'
-    };
-
     super(props);
-    this.state = {pic: pic1};
+    this.state = {pic: 1};
   }
 
   render () {
 
     let pic1 = {
-      uri: 'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/30629511_2085452011706470_7758051455998623744_n.png?_nc_cat=107&_nc_ht=scontent.fuio1-1.fna&oh=2195a14152eb11b1a72c52bf67499bdf&oe=5C7C84CD'
+      uri: 'https://previews.123rf.com/images/grgroup/grgroup1611/grgroup161108920/65491767-icono-de-dibujos-animados-chico-ni%C3%B1ez-ni%C3%B1o-peque%C3%B1o-persona-personas-y-el-tema-dise%C3%B1o-aislado-ilustraci%C3%B3n-vectorial.jpg'
     };
 
     let pic2 = {
-      uri: 'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/14691145_1772646259653715_6259652813948861236_n.jpg?_nc_cat=107&_nc_ht=scontent.fuio1-1.fna&oh=e6f61fac410fbdae7a99c4d0a4443711&oe=5C763871'
+      uri: 'https://previews.123rf.com/images/alexutemov/alexutemov1604/alexutemov160401348/54834479-personas-m%C3%BAsico-plana-ilustraci%C3%B3n-personajes-de-dibujos-animados-del-m%C3%BAsico-con-la-guitarra-aislada-en-el-fondo.jpg'
     };
 
+    let picG = null;
+
+    /**
+     * For set or change a state. You must call .setState({stateChanged:value})
+     * You can include this code inside the fuction, after that You will call wherever.
+     */
     updateImage = () =>{
-      if(this.state.pic===pic1){
-        this.setState({ pic:pic2})
-      }
-      else{
-        this.setState({ pic:pic1})
-      }
+      this.state.pic===1 ? this.setState({ pic:2}) : this.setState({ pic:1})  
     }
 
+    this.state.pic===1 ? picG=pic1 : picG=pic2;
+
+
     return (
-      <View style={{alignItems: 'center', backgroundColor: 'blue'}}>
-        <Text>Queja: {this.props.id}!</Text>
-        <Image source={this.state.pic} style={{width: 100, height: 100}}/>
-        <Text>Descripcion: {this.props.description}!</Text>
+      <View style={{alignItems: 'center', backgroundColor: 'rgb(42, 179, 128)'}}>
+        <Text>ID: {this.props.id}!</Text>
+        <Image source={picG} style={{width: 100, height: 100}}/>
+        <Text>Name: {this.props.name}!</Text>
         <Button
+        /**Here. I changed a state */
           onPress={updateImage}
           title="Cambiar imagen"
           color="#841584"
@@ -49,51 +53,20 @@ class Queja extends Component {
         />
       </View>
     )
-
   }
 
-}
-
-
-class Blink extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isShowingText: true };
-
-
-    // Toggle the state every second
-    setInterval(() => (
-      this.setState(previousState => (
-        { isShowingText: !previousState.isShowingText }
-      ))
-    ), this.props.intervalTime);
-  }
-
-  render() {
-    if (!this.state.isShowingText) {
-      return null;
-    }
-
-    return (
-      <Text>{this.props.text}</Text>
-    );
-  }
 }
 
 
 export default class App extends React.Component {
 
   render() {
-
+    
     return (
       <View style={styles.container}>
-
-        <View>
-        <Text>Example of State</Text>
-        </View>
-        <View>
-          <Queja id='1_1234' description='Esta es una prueba de props 1'/>
-        </View>
+          <Text>Persona 1 </Text>
+          {/* This is one instace of Person */}
+          <Person id='040012' name='Jean Karlo' />
       </View>
     );
   }
