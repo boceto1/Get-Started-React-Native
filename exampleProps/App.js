@@ -2,16 +2,6 @@ import React, { Component }  from 'react';
 import { StyleSheet, Text, View,Image } from 'react-native';
 
 
-class Greeting extends Component {
-  render() {
-    return (
-      <View style={{alignItems: 'center'}}>
-        <Text>Hello {this.props.name}!</Text>
-      </View>
-    );
-  }
-}
-
 
 /**Example of use Props
  * Props allow create my own componentes for afther that can use in diferentent place
@@ -20,15 +10,15 @@ class Greeting extends Component {
  */
 
 // Queja use props for build a class.
-class Queja extends Component {
+class Person extends Component {
 
   render () {
 
     return (
-      <View style={{alignItems: 'center', backgroundColor: 'blue'}}>
-        <Text>Queja: {this.props.id}!</Text>
+      <View style={{alignItems: 'center', backgroundColor: 'rgb(42, 179, 128)'}}>
+        <Text>ID: {this.props.id}!</Text>
         <Image source={this.props.pic} style={{width: 100, height: 100}}/>
-        <Text>Descripcion: {this.props.description}!</Text>
+        <Text>Name {this.props.name}!</Text>
       </View>
     )
 
@@ -39,39 +29,34 @@ class Queja extends Component {
 
 export default class App extends React.Component {
   render() {
-    let pic = {
-      uri: 'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/30629511_2085452011706470_7758051455998623744_n.png?_nc_cat=107&_nc_ht=scontent.fuio1-1.fna&oh=2195a14152eb11b1a72c52bf67499bdf&oe=5C7C84CD'
+    let pic1 = {
+      uri: 'https://previews.123rf.com/images/grgroup/grgroup1611/grgroup161108920/65491767-icono-de-dibujos-animados-chico-ni%C3%B1ez-ni%C3%B1o-peque%C3%B1o-persona-personas-y-el-tema-dise%C3%B1o-aislado-ilustraci%C3%B3n-vectorial.jpg'
     };
 
     let pic2 = {
-      uri: 'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/14691145_1772646259653715_6259652813948861236_n.jpg?_nc_cat=107&_nc_ht=scontent.fuio1-1.fna&oh=e6f61fac410fbdae7a99c4d0a4443711&oe=5C763871'
+      uri: 'https://previews.123rf.com/images/alexutemov/alexutemov1604/alexutemov160401348/54834479-personas-m%C3%BAsico-plana-ilustraci%C3%B3n-personajes-de-dibujos-animados-del-m%C3%BAsico-con-la-guitarra-aislada-en-el-fondo.jpg'
     };
 
     let pic3 = {
-      uri:'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/46454453_2261215060796830_4816075441800478720_n.png?_nc_cat=108&_nc_ht=scontent.fuio1-1.fna&oh=de80fe3478bd5091f864f95c7f9684ae&oe=5C718DF8'
+      uri:'https://st2.depositphotos.com/1007566/12257/v/950/depositphotos_122570246-stock-illustration-boy-kid-cartoon.jpg'
      
     };
 
-    let pic4 = {
-      uri: 'https://scontent.fuio1-1.fna.fbcdn.net/v/t1.0-9/44805198_2244272805824389_5538249711309291520_n.png?_nc_cat=100&_nc_ht=scontent.fuio1-1.fna&oh=b7abd18171bc989086628b20f8a9d4fd&oe=5C7DC459'  
-    };
 
     return (
 
       <View style={{alignItems: 'center'}}>
 
-      <Text>Conjunto de Quejas</Text>
+      <Text>Conjunto de Personas</Text>
+      <Text>Person 1 </Text>
       {/* This is one instace of Queja */}
-      <Queja id='1_1234' pic={pic} description='Esta es una prueba de props 1' />
-      <Text>Queja No2 </Text>
+      <Person id='1_1234' pic={pic1} name='Jean Karlo' />
+      <Text>Person 2 </Text>
       {/* This is an other instace of Queja */}
-      <Queja id='2_1234' pic={pic2} description='Esta es una prueba de props 2' />
-      <Text>Queja No3 </Text>
+      <Person id='2_1234' pic={pic2} name='Daniel' />
+      <Text>Person 3  </Text>
       {/* This is an other instace of Queja */}
-      <Queja id='3_1234' pic={pic3} description='Esta es una prueba de props 3' />
-      <Text>Queja No4 </Text>
-      {/* This is an other instace of Queja */}
-      <Queja id='4_1234' pic={pic4} description='Esta es una prueba de props 4' />
+      <Person id='3_1234' pic={pic3} name='Jhosue' />
     </View>
     );
   }
