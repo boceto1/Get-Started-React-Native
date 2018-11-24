@@ -3,7 +3,7 @@ import { StyleSheet, Text, View,Image,Button } from 'react-native';
 
 
 /**
- * Componet Queja
+ * Componet Person
  */
 class Person extends Component {
 
