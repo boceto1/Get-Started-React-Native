@@ -25,7 +25,7 @@ npm install -g react-native-cli
 
  3.- Setting your virtual enviroment, in this case I'm using Genymotion how emulator. If you want to use your mobile device, You must install "Expo" client.
 
- Puedes ayudarte con los siguientes links para su configuración:
+ For more information, you can check this post:
 - https://medium.com/@devmrin/complete-how-to-create-react-native-app-with-genymotion-android-emulator-on-windows-10-in-10-3834fd90b074?fbclid=IwAR1uJmCwr_9GlCJHNxeRGyYs8s8fZgkYotZAHDWiHn8un9pWbWtounkVYp4
 - https://medium.com/@psyanite/how-to-use-genymotion-with-expo-cc52815928cf?fbclid=IwAR2PMG8qtWRUrjc_ktbVmf277OAhrd6fra-BBySq4n_gicAs6PE5c8WJaZU
 
