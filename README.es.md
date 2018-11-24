@@ -31,6 +31,12 @@ Puedes ayudarte con los siguientes links para su configuración:
 
 4. Listo para aprender, empezemos.
 
+## Items
+
+1. Props
+2. States
+3. Styles
+
 ## Herramientas
 
 1. Visual Studio Code (Editor de Código)
