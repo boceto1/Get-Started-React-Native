@@ -13,21 +13,13 @@ class Person extends Component {
 
   render () {
 
-    let pic1 = {
-      uri: 'https://previews.123rf.com/images/grgroup/grgroup1611/grgroup161108920/65491767-icono-de-dibujos-animados-chico-ni%C3%B1ez-ni%C3%B1o-peque%C3%B1o-persona-personas-y-el-tema-dise%C3%B1o-aislado-ilustraci%C3%B3n-vectorial.jpg'
-    };
-
-    let pic2 = {
-      uri: 'https://previews.123rf.com/images/alexutemov/alexutemov1604/alexutemov160401348/54834479-personas-m%C3%BAsico-plana-ilustraci%C3%B3n-personajes-de-dibujos-animados-del-m%C3%BAsico-con-la-guitarra-aislada-en-el-fondo.jpg'
-    };
-
     let picG = null;
 
     updateImage = () =>{
       this.state.pic===1 ? this.setState({ pic:2}) : this.setState({ pic:1})  
     }
 
-    this.state.pic===1 ? picG=pic1 : picG=pic2;
+    this.state.pic===1 ? picG=this.props.pics[0] : picG=this.props.pics[1];
 
     return (
       <View style={styles.personContainer}>
@@ -47,10 +39,40 @@ class Person extends Component {
 }
 
 export default class App extends React.Component {
+
+  
   render() {
+    let pics = [
+      {
+        uri: 'https://previews.123rf.com/images/grgroup/grgroup1611/grgroup161108920/65491767-icono-de-dibujos-animados-chico-ni%C3%B1ez-ni%C3%B1o-peque%C3%B1o-persona-personas-y-el-tema-dise%C3%B1o-aislado-ilustraci%C3%B3n-vectorial.jpg'
+      },
+      {
+        uri: 'https://previews.123rf.com/images/alexutemov/alexutemov1604/alexutemov160401348/54834479-personas-m%C3%BAsico-plana-ilustraci%C3%B3n-personajes-de-dibujos-animados-del-m%C3%BAsico-con-la-guitarra-aislada-en-el-fondo.jpg'
+      }
+    ]
+
+    let pics2 = [
+      {
+        uri: 'https://png.pngtree.com/element_origin_min_pic/16/07/19/19578e0e8b619e0.jpg'
+      },
+      {
+        uri: 'https://png.pngtree.com/element_origin_min_pic/17/03/11/862a2e7bc2d9046b8ad6cd50d3190cbf.jpg'
+      }
+    ]
+
     return (
       <View style={styles.container}>
-          <Person id='040012' name='Jean Karlo' />
+
+        <View style={{width: 400, height: 50, marginBottom:200}}>
+          <Person id='040012' name='Jean Karlo' pics={pics} />
+        </View>
+
+        <View style={styles.girl}>
+          <Person id='170622' name='Bremhy Ramos' pics={pics2} />
+        </View>
+        
+  
+          
       </View>
     );
   }
@@ -61,11 +83,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   personContainer:{
     alignItems: 'center', 
-    backgroundColor: 'rgb(42, 179, 128)'
   },
   heading:{
     color:'blue',
@@ -76,4 +96,13 @@ const styles = StyleSheet.create({
     color:'black',
     fontSize: 20,
   },
+  men:{
+    width:400,
+    height:50,
+    marginBottom: 200,
+  },
+  girl:{
+    width:400,
+    height:50,
+  }
 });
